@@ -1,2 +1,3 @@
-# sandbox
-Sandbox Environment for GitHub Codespaces
+# Sandbox Playground
+
+Sandbox environment to play with tools and services.
