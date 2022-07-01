@@ -4,6 +4,9 @@
 		"dockerfile": "Dockerfile",
 		"context": ".."
 	},
+	"runArgs": [
+		"--privileged"
+	],
 	"settings": {},
 	"extensions": [
 		"eamodio.gitlens",
@@ -21,7 +24,7 @@
 	],
 	"remoteUser": "vscode",
 	"features": {
-		"docker-from-docker": "latest",
+		"docker-in-docker": "latest",
 		"kubectl-helm-minikube": "latest",
 		"python": "latest",
 		"go": "latest",
