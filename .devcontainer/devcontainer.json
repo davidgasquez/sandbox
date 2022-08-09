@@ -7,6 +7,9 @@
 	"runArgs": [
 		"--privileged"
 	],
+	"mounts": [
+		"source=${env:HOME}${env:USERPROFILE}/.aws,target=/home/vscode/.aws,type=bind"
+	],
 	"settings": {},
 	"extensions": [
 		"eamodio.gitlens",
@@ -19,15 +22,15 @@
 		"ms-python.vscode-pylance",
 		"ms-toolsai.jupyter",
 		"redhat.vscode-yaml",
-		"VisualStudioExptTeam.vscodeintellicode",
-		"seatonjiang.gitmoji-vscode"
+		"VisualStudioExptTeam.vscodeintellicode"
 	],
 	"remoteUser": "vscode",
 	"features": {
 		"docker-in-docker": "latest",
 		"kubectl-helm-minikube": "latest",
+		"aws-cli": "latest",
 		"python": "latest",
-		"go": "latest",
+		"golang": "latest",
 		"rust": "latest"
 	}
 }
