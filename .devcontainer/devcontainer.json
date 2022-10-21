@@ -25,6 +25,7 @@
 	"features": {
 		"docker-in-docker": "latest",
 		"kubectl-helm-minikube": "latest",
+		"node": "latest",
 		"python": "latest",
 		"golang": "latest",
 		"rust": "latest"
