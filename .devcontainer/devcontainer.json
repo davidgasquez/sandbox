@@ -1,33 +1,33 @@
 {
-	"name": "Sandbox Playground",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"context": ".."
-	},
-	"runArgs": [
-		"--privileged"
-	],
-	"settings": {},
-	"extensions": [
-		"eamodio.gitlens",
-		"EditorConfig.EditorConfig",
-		"GitHub.copilot",
-		"ms-azuretools.vscode-docker",
-		"ms-kubernetes-tools.vscode-kubernetes-tools",
-		"ms-python.python-language-features",
-		"ms-python.python",
-		"ms-python.vscode-pylance",
-		"ms-toolsai.jupyter",
-		"redhat.vscode-yaml",
-		"VisualStudioExptTeam.vscodeintellicode"
-	],
-	"remoteUser": "vscode",
-	"features": {
-		"docker-in-docker": "latest",
-		"kubectl-helm-minikube": "latest",
-		"node": "latest",
-		"python": "latest",
-		"golang": "latest",
-		"rust": "latest"
-	}
+    "name": "Sandbox Playground",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "runArgs": [
+        "--privileged"
+    ],
+    "settings": {},
+    "extensions": [
+        "eamodio.gitlens",
+        "EditorConfig.EditorConfig",
+        "GitHub.copilot",
+        "ms-azuretools.vscode-docker",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "ms-python.python-language-features",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "redhat.vscode-yaml",
+        "VisualStudioExptTeam.vscodeintellicode"
+    ],
+    "remoteUser": "vscode",
+    "features": {
+        "docker-in-docker": "latest",
+        "kubectl-helm-minikube": "latest",
+        "node": "latest",
+        "python": "latest",
+        "golang": "latest",
+        "rust": "latest"
+    }
 }
