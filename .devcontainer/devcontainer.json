@@ -23,11 +23,11 @@
     ],
     "remoteUser": "vscode",
     "features": {
-        "docker-in-docker": "latest",
+        "ghcr.io/devcontainers/features/docker-in-docker:1": {},
         "kubectl-helm-minikube": "latest",
         "node": "latest",
         "python": "latest",
-        "golang": "latest",
+        "ghcr.io/devcontainers/features/go:1": {},
         "rust": "latest"
     }
 }
