@@ -1,31 +1,13 @@
 {
-    "name": "Sandbox Playground",
+    "name": "Sandbox",
     "build": {
         "dockerfile": "Dockerfile",
         "context": ".."
     },
-    "runArgs": [
-        "--privileged"
-    ],
     "settings": {},
-    "extensions": [
-        "eamodio.gitlens",
-        "EditorConfig.EditorConfig",
-        "ms-azuretools.vscode-docker",
-        "ms-kubernetes-tools.vscode-kubernetes-tools",
-        "ms-python.python-language-features",
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "ms-toolsai.jupyter",
-        "redhat.vscode-yaml",
-        "VisualStudioExptTeam.vscodeintellicode"
-    ],
+    "remoteUser": "codespace",
     "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:1": {},
-        "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
-        "ghcr.io/devcontainers/features/node:1": {},
-        "ghcr.io/devcontainers/features/python:1": {},
-        "ghcr.io/devcontainers/features/go:1": {},
-        "ghcr.io/devcontainers/features/rust:1": {}
+        "ghcr.io/devcontainers/features/docker-in-docker:latest": {},
+        "ghcr.io/stuartleeks/dev-container-features/shell-history:latest": {}
     }
 }
