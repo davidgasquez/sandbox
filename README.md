@@ -1,4 +1,4 @@
-# Sandbox
+# :art: Sandbox
 
 Just a sandbox environment that can be used to play around with new technologies.
 
