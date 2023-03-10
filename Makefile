@@ -11,4 +11,7 @@ push:
 	docker push $(IMAGE_NAME):$(IMAGE_TAG)
 
 dev:
-	docker run -it --rm -v $(PWD):/workspaces $(IMAGE_NAME):$(IMAGE_TAG) /bin/bash
+	docker run -it --privileged --rm --net=host -v $(PWD):/workspaces $(IMAGE_NAME):$(IMAGE_TAG) /bin/bash
+
+clean:
+	git clean -fdx
