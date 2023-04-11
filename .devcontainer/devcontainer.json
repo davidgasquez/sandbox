@@ -4,7 +4,11 @@
         "dockerfile": "../Dockerfile",
         "context": ".."
     },
-    "settings": {},
+    "customizations": {
+        "vscode": {
+            "settings": {}
+        }
+    },
     "remoteUser": "codespace",
     "features": {
         "ghcr.io/devcontainers/features/docker-in-docker:latest": {},
