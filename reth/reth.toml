@@ -1,0 +1,9 @@
+[prune]
+block_interval = 5
+
+[prune.parts]
+sender_recovery = { distance = 32 }
+# transaction_lookup is not pruned
+receipts = { before = 11052984 }    # Beacon Deposit Contract deployment block: https://etherscan.io/tx/0xe75fb554e433e03763a1560646ee22dcb74e5274b34c5ad644e7c0f619a7e1d0
+account_history = { distance = 64 }
+storage_history = { distance = 64 }
