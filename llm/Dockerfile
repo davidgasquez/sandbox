@@ -41,13 +41,25 @@
 
 # RUN pip3 install --pre torch --index-url https://download.pytorch.org/whl/nightly/rocm5.7
 # RUN pip3 install numpy
-# RUN CMAKE_ARGS="-DLLAMA_HIPBLAS=on" pip install llama-cpp-python --force-reinstall --upgrade --no-cache-dir
+# ENV HIP_VISIBLE_DEVICES=1
+# ENV LLAMA_HIPBLAS=1
+# ENV CC=/opt/rocm/llvm/bin/clang
+# ENV CXX=/opt/rocm/llvm/bin/clang++
+# RUN CMAKE_ARGS="-DLLAMA_HIPBLAS=1" pip3 install llama-cpp-python --force-reinstall --upgrade --no-cache-dir
 
 # USER $USERNAME
 # ENV PATH /home/$USERNAME/.local/bin:$PATH
 # WORKDIR /home/$USERNAME
 
-FROM ghcr.io/ggerganov/llama.cpp:full-rocm
+# FROM ghcr.io/ggerganov/llama.cpp:full-rocm
+FROM rocm/dev-ubuntu-22.04:5.7-complete
+ENV HIP_VISIBLE_DEVICES=1
+# ENV GPU_TARGETS=???
+ENV LLAMA_HIPBLAS=1
+ENV CC=/opt/rocm/llvm/bin/clang
+ENV CXX=/opt/rocm/llvm/bin/clang++
+RUN pip3 install --pre torch --index-url https://download.pytorch.org/whl/nightly/rocm5.7
+# RUN CMAKE_ARGS="-DLLAMA_HIPBLAS=1" pip3 install llama-cpp-python --force-reinstall --upgrade --no-cache-dir
 
 # TODO: Use the AMD rocm ubuntu image
 
