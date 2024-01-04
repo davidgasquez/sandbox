@@ -3,7 +3,7 @@ IMAGE_NAME = "iroh"
 build:
 	docker build -t $(IMAGE_NAME) .
 
-dev:
+dev: build
 	docker run -it --rm -v $(PWD):/iroh $(IMAGE_NAME) /bin/bash
 
 node:

@@ -1,4 +1,5 @@
 install:
 	git clone https://github.com/paradigmxyz/cryo
-	cd cryo
-	cargo install --path ./crates/cli
+	cargo install --path ./cryo/crates/cli
+	mkdir -p $(HOME)/.local/bin
+	cp cryo/target/release/cryo $(HOME)/.local/bin/cryo
