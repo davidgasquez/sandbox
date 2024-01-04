@@ -6,11 +6,10 @@ Trying to get chain data with cryo.
 cryo blocks -b 18000000:18100000 \
     --rpc https://eth.merkle.io
 
-cryo blocks --contract "0x4AAcca72145e1dF2aeC137E1f3C5E3D75DB8b5f3" \
-    --chunk-size 10000 \
+cryo transactions --contract "0x03506eD3f57892C85DB20C36846e9c808aFe9ef4" \
     --output-dir data \
     --overwrite \
-    -b 18790000:18800000 \
+    -b 18940000:18950000 \
     --rpc https://eth.merkle.io
 ```
 
@@ -21,3 +20,10 @@ cryo blocks --contract "0x4AAcca72145e1dF2aeC137E1f3C5E3D75DB8b5f3" \
 - https://eth.llamarpc.com
 - https://rpc.mevblocker.io
 - More at https://docs.pokt.network/get-rpcs/public-endpoints and https://chainlist.org/
+
+## FEVM
+
+```bash
+cryo blocks -b 3536080:3536085 --csv \
+    --rpc https://rpc.ankr.com/filecoin
+```
