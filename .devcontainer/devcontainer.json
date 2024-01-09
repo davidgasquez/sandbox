@@ -4,15 +4,8 @@
         "dockerfile": "../Dockerfile",
         "context": ".."
     },
-    "customizations": {
-        "vscode": {
-            "settings": {}
-        }
-    },
-    "remoteUser": "codespace",
     "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:latest": {},
-        "ghcr.io/stuartleeks/dev-container-features/shell-history:latest": {},
+        "ghcr.io/devcontainers/features/docker-outside-of-docker": {},
         "ghcr.io/devcontainers/features/rust:latest": {}
     }
 }
