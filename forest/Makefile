@@ -5,3 +5,6 @@ cli:
 	--name forest \
 	--network host \
 	ghcr.io/chainsafe/forest:edge
+
+clean-docker-image:
+	docker rmi ghcr.io/chainsafe/forest:edge
