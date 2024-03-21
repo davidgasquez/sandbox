@@ -1,7 +1,7 @@
 cli:
 	docker run --init -it --rm \
 	--entrypoint /bin/bash \
-	-v $(PWD)/data:/home/forest/data \
+	-v $(PWD)/snapshots:/home/forest/snapshots \
 	--name forest \
 	--network host \
 	ghcr.io/chainsafe/forest:edge
