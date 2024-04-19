@@ -1,10 +1,8 @@
-IMAGE_NAME = "iroh"
+cli:
+	wget https://github.com/n0-computer/iroh/releases/download/v0.14.0/iroh-linux-amd64.zip -O iroh.zip
+	unzip iroh.zip
+	rm iroh.zip
+	chmod +x iroh
 
-build:
-	docker build -t $(IMAGE_NAME) .
-
-dev: build
-	docker run -it --rm -v $(PWD):/iroh $(IMAGE_NAME) /bin/bash
-
-node:
-	export IROH_DATA_DIR=./iroh && iroh start --rpc-port 3000
+python:
+	uv pip install iroh
