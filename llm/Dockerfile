@@ -1,4 +1,4 @@
-FROM rocm/dev-ubuntu-22.04:5.7-complete
+FROM rocm/dev-ubuntu-22.04:6.0.2-complete
 
 # Environment variables
 ENV GPU_TARGETS=gfx1100
