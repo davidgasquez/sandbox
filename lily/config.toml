@@ -1,0 +1,37 @@
+[Backup]
+DisableMetadataLog = false
+
+[Pubsub]
+Bootstrapper = false
+
+[Client]
+UseIpfs = false
+IpfsOnlineMode = false
+IpfsMAddr = ""
+IpfsUseForRetrieval = false
+SimultaneousTransfersForStorage = 20
+SimultaneousTransfersForRetrieval = 20
+OffChainRetrieval = false
+
+[Chainstore]
+EnableSplitstore = true
+
+[Chainstore.Splitstore]
+ColdStoreType = "discard"
+HotStoreFullGCFrequency = 3
+HotStoreMaxSpaceTarget = 650000000000
+HotStoreMaxSpaceThreshold = 150000000000
+
+[Fevm]
+EnableEthRPC = true
+
+[Storage]
+[Storage.File]
+[Storage.File.CSV]
+Format = "CSV"
+Path = "/tmp"
+OmitHeader = false
+FilePattern = "{table}.csv"
+
+[Events]
+EnableActorEventsAPI = true
