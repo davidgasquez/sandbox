@@ -1,0 +1,4 @@
+team_name,submission_id,algorithm,score,timestamp
+Team Alpha,001,neural_network,0.95,2025-05-31T10:00:00Z
+Team Beta,002,random_forest,0.87,2025-05-31T10:30:00Z
+Team Gamma,003,svm,0.92,2025-05-31T11:00:00Z
