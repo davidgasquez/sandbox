@@ -7,6 +7,7 @@
 # ]
 # ///
 """Download Spain Climate TRACE country package and combine into a long table."""
+
 import io
 import zipfile
 from pathlib import Path
@@ -24,11 +25,15 @@ def main(out: Path = OUT_CSV) -> None:
     resp = requests.get(URL, verify=False)
     resp.raise_for_status()
     with zipfile.ZipFile(io.BytesIO(resp.content)) as zf:
-        country_files = [f for f in zf.namelist() if f.endswith("country_emissions_v4_6_0.csv")]
+        country_files = [
+            f for f in zf.namelist() if f.endswith("country_emissions_v4_6_0.csv")
+        ]
         frames = []
         for f in country_files:
             with zf.open(f) as fh:
-                df = pl.read_csv(fh, schema_overrides={"emissions_quantity": pl.Float64})
+                df = pl.read_csv(
+                    fh, schema_overrides={"emissions_quantity": pl.Float64}
+                )
             frames.append(
                 df.select(
                     "iso3_country",
