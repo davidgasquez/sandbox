@@ -12,6 +12,7 @@
 - Add small, task‑oriented `README.md` per project (what it is, quickstart, common commands).
 - Use `uv` when working with Python (e.g., `uv run`, `uv add`). Check `uv help` for options.
 - Run `curl`, other UNIX tools, or small termporary Python scripts to gather information before making decisions or writing long scripts. Useful for APIs, exploring datasets, etc.
+- Format Python code with `uvx ruff format [project-folder]` and check with `uvx ruff check [project-folder]`.
 
 ### Working with `uv`
 
