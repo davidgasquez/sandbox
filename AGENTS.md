@@ -1,10 +1,9 @@
-# Repository Guidelines
+# Rules
 
 ## Project Structure & Module Organization
 
-- Monorepo of self‑contained experiments. One project, one folder with a simple name.
-- Project have a `README.md`, `Makefile`, and relevant files.
-- Use per‑project make targets.
+- This is a sandbox repository with self‑contained experiments. One experiment, one folder with a simple name.
+- Experiments have a `README.md`, `Makefile`, and relevant files.
 
 ## General Guidelines
 
