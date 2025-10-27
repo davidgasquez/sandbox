@@ -23,7 +23,7 @@ DEFAULT_PARAMS = {
     "returnGeometry": "false",
     "f": "pjson",
 }
-START_YEAR = 1988
+START_YEAR = 1988  # earliest year with non-null fecha values
 TIMEOUT = httpx.Timeout(30.0, connect=30.0, read=120.0)
 
 
@@ -78,6 +78,12 @@ def write_parquet(df: pl.DataFrame, output_path: Path) -> Path:
     return output_path
 
 
+def write_csv(df: pl.DataFrame, output_path: Path) -> Path:
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    df.write_csv(output_path)
+    return output_path
+
+
 def main() -> None:
     current_year = datetime.now().year
     with httpx.Client(timeout=TIMEOUT, verify=False) as client:
@@ -87,9 +93,12 @@ def main() -> None:
         raise SystemExit("No records downloaded")
 
     df = build_frame(records)
-    output_path = Path(__file__).resolve().parent / "data" / "water_reservoirs.parquet"
-    write_parquet(df, output_path)
-    print(f"Saved {len(df)} records to {output_path}")
+    data_dir = Path(__file__).resolve().parent / "data"
+    parquet_path = data_dir / "water_reservoirs.parquet"
+    csv_path = data_dir / "water_reservoirs.csv"
+    write_parquet(df, parquet_path)
+    write_csv(df, csv_path)
+    print(f"Saved {len(df)} records to {parquet_path.name} and {csv_path.name}")
 
 
 if __name__ == "__main__":
