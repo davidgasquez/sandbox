@@ -1,6 +1,6 @@
 # Cryo
 
-Trying to get chain data with cryo.
+Getting some chain data with cryo.
 
 ```bash
 cryo blocks -b 18000000:18100000 \
@@ -13,17 +13,16 @@ cryo transactions --contract "0x03506eD3f57892C85DB20C36846e9c808aFe9ef4" \
     --rpc https://eth.merkle.io
 ```
 
-## EVM Networks RPC
-
-- https://eth-archival-rpc.gateway.pokt.network
-- https://eth.merkle.io
-- https://eth.llamarpc.com
-- https://rpc.mevblocker.io
-- More at https://docs.pokt.network/get-rpcs/public-endpoints and https://chainlist.org/
-
 ## FEVM
 
 ```bash
-cryo blocks -b 3536080:3536085 --csv \
-    --rpc https://rpc.ankr.com/filecoin
+cryo -r https://api.node.glif.io/rpc/v1 logs -b 5500908:5510938
+```
+
+## Docker
+
+```bash
+cd cryo
+make install
+make cli
 ```

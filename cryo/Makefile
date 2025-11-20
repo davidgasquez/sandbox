@@ -1,5 +1,22 @@
+IMAGE ?= cryo:latest
+CRYO_REF ?= main
+UID ?= $(shell id -u)
+GID ?= $(shell id -g)
+PWD := $(shell pwd)
+
+.PHONY: install cli
+
 install:
-	git clone https://github.com/paradigmxyz/cryo
-	cargo install --path ./cryo/crates/cli
-	mkdir -p $(HOME)/.local/bin
-	cp cryo/target/release/cryo $(HOME)/.local/bin/cryo
+	docker build --build-arg CRYO_REF=$(CRYO_REF) -t $(IMAGE) .
+
+cli: install
+	docker run --rm -it \
+		--user $(UID):$(GID) \
+		-v /etc/passwd:/etc/passwd:ro \
+		-v /etc/group:/etc/group:ro \
+		-e HOME=/work \
+		-e USER=$(shell id -un) \
+		--entrypoint bash \
+		-v $(PWD):/work \
+		-w /work \
+		$(IMAGE)
