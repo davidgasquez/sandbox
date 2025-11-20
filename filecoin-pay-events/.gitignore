@@ -1,0 +1,6 @@
+.venv
+.uv
+__pycache__/
+*.log
+logs.ndjson
+logs.json
