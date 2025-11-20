@@ -1,4 +1,3 @@
-
 .PHONY: run fetch decode format lint
 
 fetch:
