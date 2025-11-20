@@ -7,6 +7,7 @@ This experiment pulls recent events emitted by the Filecoin Pay v1 contract thro
 ```bash
 # Fetch and decode the last 1,880 blocks using the script's inline metadata
 uv run main.py
+uv run https://raw.githubusercontent.com/davidgasquez/sandbox/refs/heads/main/filecoin-pay-events/main.py
 
 # Override the window or output path
 uv run main.py --blocks 500 --output data/pay-events.ndjson
