@@ -1,6 +1,8 @@
 .venv
 .uv
+/.ruff_cache
 __pycache__/
 *.log
+*.ndjson
 logs.ndjson
 logs.json

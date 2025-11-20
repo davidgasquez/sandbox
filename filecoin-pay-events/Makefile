@@ -1,7 +1,12 @@
-.PHONY: run format lint
+.PHONY: run fetch decode format lint
 
-run:
-uv run python main.py
+fetch:
+uv run fetch_logs.py
+
+decode:
+uv run decode_logs.py
+
+run: fetch decode
 
 format:
 uvx ruff format .
