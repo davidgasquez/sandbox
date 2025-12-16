@@ -11,17 +11,16 @@ uv run fetch_logs.py
 # Decode those logs with the published ABI
 uv run decode_logs.py
 
-# Scan the latest 1,000 epochs across the network and write CSV logs
-uv run latest_logs.py
-
 # Override the window or output path
 uv run fetch_logs.py --blocks 500 --output data/raw.ndjson
 uv run decode_logs.py --input data/raw.ndjson --output data/decoded.ndjson
+
+# Use the RPC endpoint without TLS verification (only if needed)
+uv run fetch_logs.py --insecure-rpc
+uv run decode_logs.py --insecure-abi
 ```
 
 The default contract target is `f410feoy6aghqro4yenelcwug52jg527x6tnkxl36cyi` (Filecoin Pay v1). Use `--delegated-target` to inspect another delegated address.
-
-`latest_logs.py` defaults to the public Ankr Filecoin RPC, scans the most recent 1,000 epochs in 100-block batches, and writes the normalized results to `latest-logs.csv`.
 
 ## Flow example
 
