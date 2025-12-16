@@ -22,6 +22,20 @@ uv run decode_logs.py --insecure-abi
 
 The default contract target is `f410feoy6aghqro4yenelcwug52jg527x6tnkxl36cyi` (Filecoin Pay v1). Use `--delegated-target` to inspect another delegated address.
 
+## Raw log schema
+
+The rawest output matches the Ethereum `eth_getLogs` payload, written as newline-delimited JSON. Each log entry contains:
+
+- `address` (string) – contract address that emitted the event.
+- `blockHash` (string) – hash of the block that included the log.
+- `blockNumber` (number) – block height as an integer.
+- `data` (string) – ABI-encoded event data (`0x`-prefixed hex).
+- `logIndex` (number) – index of the log within the block.
+- `removed` (boolean) – reorg indicator; `true` if the log was removed.
+- `topics` (array of strings) – indexed event topics (`topic0` is the event signature).
+- `transactionHash` (string) – hash of the transaction that emitted the log.
+- `transactionIndex` (number) – index of the transaction within the block.
+
 ## Flow example
 
 Recent runs produced the following raw and decoded lines:
